@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Listing 4-2</title>
+<title>Listing 4-4</title>
 <script src="js/angular.min.js"></script>
 <script>
 	function MyFilterDemoCtrl($scope) {
@@ -9,22 +9,16 @@
 			firstName : 'JENNA',
 			surname : 'GRANT',
 			dateJoined : new Date(2010, 2, 23),
-			consumption : 123.659855,
+			consumption : 123.644855,
 			plan : 'super-basic-plan'
 		};
 		$scope.data = someData;
 	}
 </script>
-
 </head>
 <body ng-app ng-controller="MyFilterDemoCtrl">
 	<p>
-		<!-- Unfiltered data -->
-		<strong>First Name</strong>: {{data.firstName}}<br /> <strong>Surname:</strong> {{data.surname}}
-	</p>
-	<p>
-		<!-- Filtered data -->
-		<strong>First Name</strong>: {{data.firstName | lowercase}}<br /> <strong>Surname:</strong> {{data.surname | lowercase }}
+		Consumption: {{data.consumption }}<br /> Consumption: {{data.consumption | number:2 }}
 	</p>
 </body>
 </html>

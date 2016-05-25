@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Listing 4-2</title>
+<title>Listing 4-5</title>
 <script src="js/angular.min.js"></script>
 <script>
 	function MyFilterDemoCtrl($scope) {
@@ -15,16 +15,17 @@
 		$scope.data = someData;
 	}
 </script>
-
 </head>
 <body ng-app ng-controller="MyFilterDemoCtrl">
 	<p>
-		<!-- Unfiltered data -->
-		<strong>First Name</strong>: {{data.firstName}}<br /> <strong>Surname:</strong> {{data.surname}}
+		medium:<strong> {{ data.dateJoined | date:'medium'}} </strong>
 	</p>
 	<p>
-		<!-- Filtered data -->
-		<strong>First Name</strong>: {{data.firstName | lowercase}}<br /> <strong>Surname:</strong> {{data.surname | lowercase }}
+		mediumDate:<strong> {{ data.dateJoined | date:'mediumDate'}} </strong>
 	</p>
+	<p>
+		shortDate:<strong> {{ data.dateJoined | date:'shortDate'}} </strong>
+	</p>
+	<p>This customer joined in the month of {{ data.dateJoined | date:'MMMM'}} on a {{ data.dateJoined | date:'EEEE'}} at {{ data.dateJoined | date:'ha'}}</p>
 </body>
-</html>
+</html>	
